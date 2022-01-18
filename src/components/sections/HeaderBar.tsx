@@ -1,4 +1,4 @@
-import { Box, IconButton, HStack, Link } from '@chakra-ui/react'
+import { Box, IconButton, HStack, Link, Tooltip } from '@chakra-ui/react'
 import { HiCog } from 'react-icons/hi'
 import { Link as RouterLink } from 'react-router-dom'
 import SSMGLogo from '../SSMGLogo'
@@ -13,16 +13,20 @@ const NavBar = (): JSX.Element => {
       background="blue.600"
     >
       <HStack height="100%" justifyContent="space-between">
-        <Link as={RouterLink} to="/" height="100%">
-          <SSMGLogo fill="#ffffff" />
-        </Link>
-        <IconButton
-          aria-label="Configuration"
-          icon={<HiCog size="80%" />}
-          variant="ghost"
-          color="white"
-          size="lg"
-        />
+        <Tooltip label="Go to home" openDelay={500}>
+          <Link as={RouterLink} to="/" height="100%">
+            <SSMGLogo fill="#ffffff" />
+          </Link>
+        </Tooltip>
+        <Tooltip label="Settings">
+          <IconButton
+            aria-label="Settings"
+            icon={<HiCog size="80%" />}
+            variant="ghost"
+            color="white"
+            size="lg"
+          />
+        </Tooltip>
       </HStack>
     </Box>
   )
