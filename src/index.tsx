@@ -4,10 +4,11 @@ import { render } from 'react-dom'
 import { App } from './components/App'
 import reportWebVitals from './reportWebVitals'
 import * as serviceWorker from './serviceWorker'
+import theme from './theme'
 
 render(
   <StrictMode>
-    <ColorModeScript />
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <App />
   </StrictMode>,
   document.getElementById('root')
