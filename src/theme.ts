@@ -6,12 +6,9 @@ const config: ThemeConfig = {
 }
 
 const customTheme = {
-  styles: {
-    global: {
-      body: {
-        fontFamily: 'Inter',
-      },
-    },
+  fonts: {
+    body: 'Inter, sans-serif',
+    heading: 'Inter, sans-serif',
   },
 }
 
