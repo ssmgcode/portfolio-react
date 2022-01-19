@@ -6,7 +6,7 @@ import {
   Tooltip,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { HiDotsCircleHorizontal } from 'react-icons/hi'
+import { HiDotsHorizontal } from 'react-icons/hi'
 import { Link as RouterLink } from 'react-router-dom'
 import SSMGLogo from '../SSMGLogo'
 
@@ -30,10 +30,11 @@ const HeaderBar = ({ children }: Props): JSX.Element => {
             <SSMGLogo />
           </Link>
         </Tooltip>
+        {children}
         <Tooltip label="Settings">
           <IconButton
             aria-label="Settings"
-            icon={<HiDotsCircleHorizontal size="80%" />}
+            icon={<HiDotsHorizontal />}
             variant="ghost"
             size="lg"
           />
