@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ChakraProvider, Grid, GridItem } from '@chakra-ui/react'
-import Home from './pages/Home'
 import HeaderBar from './sections/HeaderBar'
 import theme from '../theme'
 import NavBar from './sections/NavBar'
+import appRoutes from '../routes'
 
 export const App = () => {
   return (
@@ -24,7 +24,9 @@ export const App = () => {
           </GridItem>
           <GridItem as="main" gridArea="main" overflow="auto">
             <Routes>
-              <Route path="/" element={<Home />} />
+              {appRoutes.map(({ path, element }) => (
+                <Route key={path} path={path} element={element} />
+              ))}
             </Routes>
           </GridItem>
           <GridItem gridArea="footer">
