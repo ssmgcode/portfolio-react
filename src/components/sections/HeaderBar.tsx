@@ -30,15 +30,17 @@ const HeaderBar = ({ children }: Props): JSX.Element => {
             <SSMGLogo />
           </Link>
         </Tooltip>
-        {children}
-        <Tooltip label="Settings">
-          <IconButton
-            aria-label="Settings"
-            icon={<HiDotsHorizontal />}
-            variant="ghost"
-            size="lg"
-          />
-        </Tooltip>
+        <HStack>
+          {children}
+          <Tooltip label="Settings">
+            <IconButton
+              aria-label="Settings"
+              icon={<HiDotsHorizontal />}
+              variant="ghost"
+              size="lg"
+            />
+          </Tooltip>
+        </HStack>
       </HStack>
     </Box>
   )

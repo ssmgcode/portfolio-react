@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { ChakraProvider, Grid, GridItem } from '@chakra-ui/react'
+import { ChakraProvider, Grid, GridItem, useMediaQuery } from '@chakra-ui/react'
 import HeaderBar from './sections/HeaderBar'
 import theme from '../theme'
 import NavBar from './sections/NavBar'
 import appRoutes from '../routes'
 
 export const App = () => {
+  const [isLargeDisplayDevice] = useMediaQuery('(min-width: 768px)')
+
   return (
     <ChakraProvider theme={theme}>
       <Router>
@@ -20,7 +22,9 @@ export const App = () => {
           `}
         >
           <GridItem gridArea="header">
-            <HeaderBar />
+            <HeaderBar>
+              {isLargeDisplayDevice ? <NavBar /> : undefined}
+            </HeaderBar>
           </GridItem>
           <GridItem as="main" gridArea="main" overflow="auto">
             <Routes>
@@ -29,9 +33,11 @@ export const App = () => {
               ))}
             </Routes>
           </GridItem>
-          <GridItem gridArea="footer">
-            <NavBar />
-          </GridItem>
+          {!isLargeDisplayDevice && (
+            <GridItem gridArea="footer" boxShadow="xs" height="60px">
+              <NavBar />
+            </GridItem>
+          )}
         </Grid>
       </Router>
     </ChakraProvider>

@@ -7,7 +7,7 @@ const NavBar = (): JSX.Element => {
   const location = useLocation()
 
   return (
-    <Box as="nav" height="60px" boxShadow="xs">
+    <Box as="nav" height="100%">
       <HStack height="100%" justifyContent="space-evenly">
         {appRoutes.map(({ name, path, icon }) => (
           <Box
