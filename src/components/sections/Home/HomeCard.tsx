@@ -7,7 +7,7 @@ interface Props {
 
 const HomeCard = ({ children }: Props): JSX.Element => {
   return (
-    <Box shadow="md" padding="1em">
+    <Box shadow="md" padding="1em" borderRadius="md">
       {children}
     </Box>
   )
