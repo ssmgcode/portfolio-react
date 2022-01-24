@@ -1,8 +1,8 @@
 import { Grid } from '@chakra-ui/react'
 import DefaultPadding from '../layouts/DefaultPadding'
 import SSMGCodeBanner from '../sections/SSMGCodeBanner'
-import AboutMe from '../sections/Home/AboutMe'
-import Skills from '../sections/Home/Skills'
+import AboutMe from '../sections/home/AboutMe'
+import Skills from '../sections/home/Skills'
 
 const Home = (): JSX.Element => (
   <DefaultPadding>
