@@ -17,17 +17,18 @@ const appRoutes: AppRoute[] = [
     element: <Home />,
     icon: <HiHome />,
   },
-  {
-    path: '/contact',
-    name: 'Contact',
-    element: <Contact />,
-    icon: <HiPhone />,
-  },
+
   {
     path: '/projects',
     name: 'Projects',
     element: <Projects />,
     icon: <HiBriefcase />,
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    element: <Contact />,
+    icon: <HiPhone />,
   },
 ]
 
