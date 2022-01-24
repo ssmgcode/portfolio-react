@@ -1,6 +1,6 @@
 import { Box, HStack, Link, Text } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
-import appRoutes from '../../routes'
+import appRoutes from '../../config/routes'
 import { useLocation } from 'react-router-dom'
 
 const NavBar = (): JSX.Element => {

@@ -3,7 +3,7 @@ import { ChakraProvider, Grid, GridItem, useMediaQuery } from '@chakra-ui/react'
 import HeaderBar from './sections/HeaderBar'
 import theme from '../theme'
 import NavBar from './sections/NavBar'
-import appRoutes from '../routes'
+import appRoutes from '../config/routes'
 
 export const App = () => {
   const [isLargeDisplayDevice] = useMediaQuery('(min-width: 768px)')

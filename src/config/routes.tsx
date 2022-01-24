@@ -1,7 +1,7 @@
 import { HiBriefcase, HiHome, HiPhone } from 'react-icons/hi'
-import Contact from './components/pages/Contact'
-import Home from './components/pages/Home'
-import Projects from './components/pages/Projects'
+import Contact from '../components/pages/Contact'
+import Home from '../components/pages/Home'
+import Projects from '../components/pages/Projects'
 
 interface AppRoute {
   path: string
