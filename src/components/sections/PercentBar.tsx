@@ -45,7 +45,7 @@ const PercentBar = ({
         justifyContent={title ? 'space-between' : 'flex-end'}
       >
         {title && (
-          <Text fontSize="xs" opacity=".8" fontWeight="bold">
+          <Text fontSize="xs" opacity=".8">
             {title}
           </Text>
         )}
