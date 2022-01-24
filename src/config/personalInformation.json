@@ -1,0 +1,42 @@
+{
+  "languages": [
+    {
+      "name": "Spanish (native)",
+      "percent": 100
+    },
+    {
+      "name": "English",
+      "percent": 75
+    }
+  ],
+  "skills": [
+    {
+      "name": "Typescript",
+      "percent": 75
+    },
+    {
+      "name": "React",
+      "percent": 65
+    },
+    {
+      "name": "Svelte",
+      "percent": 80
+    },
+    {
+      "name": "Dart",
+      "percent": 45
+    },
+    {
+      "name": "Flutter",
+      "percent": 35
+    },
+    {
+      "name": "Go",
+      "percent": 35
+    },
+    {
+      "name": "Git",
+      "percent": 30
+    }
+  ]
+}
