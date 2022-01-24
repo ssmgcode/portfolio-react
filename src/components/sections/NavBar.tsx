@@ -12,8 +12,9 @@ const NavBar = (): JSX.Element => {
         {appRoutes.map(({ name, path, icon }) => (
           <Box
             key={path}
-            background={location.pathname === path ? 'blue.500' : 'unset'}
-            padding=".3em"
+            background={location.pathname === path ? 'blue.600' : 'unset'}
+            paddingY=".5em"
+            paddingX=".75em"
             borderRadius="base"
           >
             <Link
