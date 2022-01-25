@@ -38,5 +38,24 @@
       "name": "Git",
       "percent": 30
     }
+  ],
+  "projects": [
+    {
+      "name": "Antojitos del Parque",
+      "type": "landing page",
+      "technologies": [
+        "Svelte",
+        "Typescript",
+        "Go",
+        "Svelte",
+        "Typescript",
+        "Go",
+        "Svelte",
+        "Typescript",
+        "Go"
+      ],
+      "image": "/images/antojitosdelparque.png",
+      "link": "https://antojitosdelparque.com"
+    }
   ]
 }
