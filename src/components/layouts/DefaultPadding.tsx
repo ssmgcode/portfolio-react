@@ -5,7 +5,13 @@ interface Props {
 }
 
 const DefaultPadding = ({ children }: Props): JSX.Element => (
-  <Box boxSize="100%" maxWidth="1000px" paddingX="1.5em">
+  <Box
+    boxSize="100%"
+    maxWidth="1000px"
+    paddingX="1.5em"
+    marginLeft="auto"
+    marginRight="auto"
+  >
     {children}
   </Box>
 )
