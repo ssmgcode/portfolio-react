@@ -1,5 +1,8 @@
 import { VStack, Heading, Avatar, Text } from '@chakra-ui/react'
 import HomeCard from './HomeCard'
+import personalInformation from '../../../config/personalInformation.json'
+
+const bio = personalInformation.bio
 
 const AboutMe = (): JSX.Element => {
   return (
@@ -7,11 +10,7 @@ const AboutMe = (): JSX.Element => {
       <VStack alignItems="start">
         <Heading>About me</Heading>
         <Avatar name="Samuel Marroquín" src="/images/me.jpeg" size="lg" />
-        <Text>
-          Samuel Marroquín. 18 years old. Guatemala 🇬🇹. Biological chemistry
-          student 🧪. Full stack developer. Typescript, React, Go, Flutter and
-          Dart.
-        </Text>
+        <Text>{bio}</Text>
       </VStack>
     </HomeCard>
   )

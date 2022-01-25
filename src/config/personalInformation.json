@@ -1,4 +1,6 @@
 {
+  "bio": "Samuel Marroquín. 18 years old. Guatemala 🇬🇹. Biomedical engineering student 🦿. Full stack developer. Typescript, React, Go, Flutter and Dart.",
+  "githubProfile": "https://github.com/ssmgcode/",
   "languages": [
     {
       "name": "Spanish (native)",
@@ -43,19 +45,10 @@
     {
       "name": "Antojitos del Parque",
       "type": "landing page",
-      "technologies": [
-        "Svelte",
-        "Typescript",
-        "Go",
-        "Svelte",
-        "Typescript",
-        "Go",
-        "Svelte",
-        "Typescript",
-        "Go"
-      ],
+      "technologies": ["svelte", "typescript"],
       "image": "/images/antojitosdelparque.png",
-      "link": "https://antojitosdelparque.com"
+      "link": "https://antojitosdelparque.com",
+      "githubLink": "https://github.com/ssmgcode/antojitos-del-parque-landing-page"
     }
   ]
 }
