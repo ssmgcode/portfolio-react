@@ -8,6 +8,8 @@ import {
   HStack,
 } from '@chakra-ui/react'
 import { HiExternalLink } from 'react-icons/hi'
+import { FaGithub } from 'react-icons/fa'
+
 import TechnologiesManager from './TechnologiesManager'
 
 interface Props {
@@ -16,6 +18,7 @@ interface Props {
   technologies: string[]
   image: string
   link: string
+  githubLink?: string
 }
 
 const Project = ({
@@ -24,13 +27,13 @@ const Project = ({
   type,
   image,
   link,
+  githubLink,
 }: Props): JSX.Element => {
   return (
     <Box
-      maxWidth="20em"
+      maxWidth="25em"
       borderRadius="md"
       borderWidth="1px"
-      boxShadow="md"
       padding="1em"
       borderBottomWidth="5px"
     >
@@ -39,21 +42,35 @@ const Project = ({
       </Heading>
       <Badge marginBottom="1em">{type}</Badge>
       <TechnologiesManager technologies={technologies} />
-      <Box height="1em" />
-      <Box
-        borderWidth="1px"
-        marginBottom=".5em"
-        borderRadius="lg"
-        overflow="hidden"
-      >
-        <Image src={image} alt={name} />
-      </Box>
-      <Link isExternal color="blue.500" href={link}>
-        <HStack>
-          <Text>Visit site</Text>
-          <HiExternalLink />
-        </HStack>
-      </Link>
+      {image && (
+        <>
+          <Box height="1em" />
+          <Box
+            borderWidth="1px"
+            marginBottom=".5em"
+            borderRadius="lg"
+            overflow="hidden"
+          >
+            <Image src={image} alt={name} />
+          </Box>
+        </>
+      )}
+      <HStack justifyContent="space-between">
+        <Link isExternal color="blue.500" href={link}>
+          <HStack>
+            <Text>Visit site</Text>
+            <HiExternalLink />
+          </HStack>
+        </Link>
+        {githubLink && (
+          <Link isExternal color="blue.500" href={githubLink}>
+            <HStack>
+              <Text>Github</Text>
+              <FaGithub />
+            </HStack>
+          </Link>
+        )}
+      </HStack>
     </Box>
   )
 }
