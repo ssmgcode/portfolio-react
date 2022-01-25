@@ -6,10 +6,10 @@ import {
   Badge,
   Link,
   HStack,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { HiExternalLink } from 'react-icons/hi'
 import { FaGithub } from 'react-icons/fa'
-
 import TechnologiesManager from './TechnologiesManager'
 
 interface Props {
@@ -29,6 +29,8 @@ const Project = ({
   link,
   githubLink,
 }: Props): JSX.Element => {
+  const linksColor = useColorModeValue('blue.500', 'blue.300')
+
   return (
     <Box
       maxWidth="25em"
@@ -56,14 +58,14 @@ const Project = ({
         </>
       )}
       <HStack justifyContent="space-between">
-        <Link isExternal color="blue.500" href={link}>
+        <Link isExternal color={linksColor} href={link}>
           <HStack>
             <Text>Visit site</Text>
             <HiExternalLink />
           </HStack>
         </Link>
         {githubLink && (
-          <Link isExternal color="blue.500" href={githubLink}>
+          <Link isExternal color={linksColor} href={githubLink}>
             <HStack>
               <Text>Github</Text>
               <FaGithub />
