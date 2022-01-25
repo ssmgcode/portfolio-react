@@ -1,7 +1,8 @@
 import { Box } from '@chakra-ui/react'
+import { ReactNode } from 'react'
 
 interface Props {
-  children?: JSX.Element | JSX.Element[]
+  children?: ReactNode
 }
 
 const DefaultPadding = ({ children }: Props): JSX.Element => (
