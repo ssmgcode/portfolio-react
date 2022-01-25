@@ -8,6 +8,7 @@ import {
   HStack,
 } from '@chakra-ui/react'
 import { HiExternalLink } from 'react-icons/hi'
+import TechnologiesManager from './TechnologiesManager'
 
 interface Props {
   name: string
@@ -37,6 +38,7 @@ const Project = ({
       </Heading>
       <Badge>{type}</Badge>
       <Box height=".75em" />
+      <TechnologiesManager technologies={technologies} />
       <Box borderWidth="1px" borderRadius="lg" overflow="hidden">
         <Image src={image} alt={name} />
       </Box>
