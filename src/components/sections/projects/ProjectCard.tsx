@@ -1,13 +1,6 @@
-import {
-  Box,
-  Heading,
-  Image,
-  Text,
-  Badge,
-  Link,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Box, Heading, Image, Text, Badge, Link } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
+
 interface Props {
   name: string
   description: string
@@ -18,7 +11,7 @@ interface Props {
   githubLink?: string
 }
 
-const Project = ({
+const ProjectCard = ({
   name,
   description,
   type,
@@ -62,4 +55,4 @@ const Project = ({
   )
 }
 
-export default Project
+export default ProjectCard
