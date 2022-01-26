@@ -5,17 +5,14 @@ import {
   Text,
   Badge,
   Link,
-  HStack,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { HiExternalLink } from 'react-icons/hi'
-import { FaGithub } from 'react-icons/fa'
-import TechnologiesManager from './TechnologiesManager'
-
+import { Link as RouterLink } from 'react-router-dom'
 interface Props {
   name: string
+  description: string
   type: string
-  technologies: string[]
+
   image: string
   link: string
   githubLink?: string
@@ -23,56 +20,44 @@ interface Props {
 
 const Project = ({
   name,
-  technologies,
+  description,
   type,
   image,
   link,
   githubLink,
 }: Props): JSX.Element => {
-  const linksColor = useColorModeValue('blue.500', 'blue.300')
-
   return (
-    <Box
-      maxWidth="25em"
-      borderRadius="md"
-      borderWidth="1px"
-      padding="1em"
-      borderBottomWidth="5px"
-    >
-      <Heading as="h5" fontSize="2xl" marginBottom=".5em">
-        {name}
-      </Heading>
-      <Badge marginBottom="1em">{type}</Badge>
-      <TechnologiesManager technologies={technologies} />
-      {image && (
-        <>
-          <Box height="1em" />
-          <Box
-            borderWidth="1px"
-            marginBottom=".5em"
-            borderRadius="lg"
-            overflow="hidden"
-          >
+    <Box sx={{ '.card:hover &': { translateY: '5px' } }}>
+      <RouterLink to={name} className="card">
+        <Box
+          maxWidth="25em"
+          borderRadius="md"
+          borderWidth="1px"
+          borderBottomWidth="5px"
+          transform="translateY(0)"
+          transition="ease"
+          transitionProperty="all"
+          transitionDuration=".1s"
+          sx={{
+            '.card:hover &': {
+              borderBottomWidth: '10px',
+              transform: 'translateY(-5px)',
+            },
+          }}
+        >
+          <Box borderTopRadius="lg" overflow="hidden">
             <Image src={image} alt={name} />
           </Box>
-        </>
-      )}
-      <HStack justifyContent="space-between">
-        <Link isExternal color={linksColor} href={link}>
-          <HStack>
-            <Text>Visit site</Text>
-            <HiExternalLink />
-          </HStack>
-        </Link>
-        {githubLink && (
-          <Link isExternal color={linksColor} href={githubLink}>
-            <HStack>
-              <Text>Github</Text>
-              <FaGithub />
-            </HStack>
-          </Link>
-        )}
-      </HStack>
+          <Box padding="1em">
+            <Link isExternal href={link}>
+              <Heading as="h5" fontSize="2xl" marginBottom=".5em">
+                {name}
+              </Heading>
+            </Link>
+            <Badge marginBottom="1em">{type}</Badge>
+          </Box>
+        </Box>
+      </RouterLink>
     </Box>
   )
 }
