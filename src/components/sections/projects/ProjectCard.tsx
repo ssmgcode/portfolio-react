@@ -1,27 +1,17 @@
 import { Box, Heading, Image, Text, Badge, Link } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
-
-interface Props {
-  name: string
-  description: string
-  type: string
-
-  image: string
-  link: string
-  githubLink?: string
-}
+import Project from '../../../models/Project'
 
 const ProjectCard = ({
+  id,
   name,
   description,
   type,
   image,
-  link,
-  githubLink,
-}: Props): JSX.Element => {
+}: Project): JSX.Element => {
   return (
     <Box sx={{ '.card:hover &': { translateY: '5px' } }}>
-      <RouterLink to={name} className="card">
+      <RouterLink to={id} className="card">
         <Box
           maxWidth="25em"
           borderRadius="md"
@@ -38,16 +28,19 @@ const ProjectCard = ({
             },
           }}
         >
-          <Box borderTopRadius="lg" overflow="hidden">
+          <Box borderTopRadius="md" overflow="hidden">
             <Image src={image} alt={name} />
           </Box>
           <Box padding="1em">
-            <Link isExternal href={link}>
-              <Heading as="h5" fontSize="2xl" marginBottom=".5em">
-                {name}
-              </Heading>
-            </Link>
-            <Badge marginBottom="1em">{type}</Badge>
+            <Heading
+              as="h5"
+              fontSize="2xl"
+              sx={{ '.card:hover &': { textDecoration: 'underline' } }}
+            >
+              {name}
+            </Heading>
+            <Text marginBottom=".5em">{description}</Text>
+            <Badge>{type}</Badge>
           </Box>
         </Box>
       </RouterLink>
