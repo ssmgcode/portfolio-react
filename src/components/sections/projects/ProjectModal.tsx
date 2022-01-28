@@ -6,12 +6,18 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
-  Button,
+  Image,
+  Badge,
   useDisclosure,
   useToast,
   Heading,
   Text,
+  Link,
+  HStack,
+  Box,
 } from '@chakra-ui/react'
+import { HiExternalLink } from 'react-icons/hi'
+import { FaGithub } from 'react-icons/fa'
 import { useEffect } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import personalInformation from '../../../config/personalInformation.json'
@@ -52,23 +58,36 @@ const ProjectModal = (): JSX.Element => {
       onClose={onClose}
       isCentered
       motionPreset="slideInBottom"
+      scrollBehavior="inside"
     >
       <ModalOverlay />
       <ModalContent>
         <ModalCloseButton />
         <ModalHeader />
         <ModalBody>
-          <Heading as="h2" size="lg">
+          <Heading textAlign="center" marginBottom={3}>
             {project.name}
           </Heading>
-          <Text>{project.description}</Text>
+          <Text marginBottom={4}>{project.description}</Text>
+          <Badge marginBottom={4}>{project.type}</Badge>
+          <Image src={project.image} alt={project.name} borderRadius="md" />
+          <ModalFooter>
+            <Link isExternal href={project.link}>
+              <HStack>
+                <Text>Visit site</Text>
+                <HiExternalLink />
+              </HStack>
+            </Link>
+            {project.githubLink && (
+              <>
+                <Box width={7} />
+                <Link isExternal href={project.githubLink}>
+                  <FaGithub size={20} />
+                </Link>
+              </>
+            )}
+          </ModalFooter>
         </ModalBody>
-        <ModalFooter>
-          <Button colorScheme="blue" onClick={onClose}>
-            Close
-          </Button>
-          <Button variant="ghost">Secondary Action</Button>
-        </ModalFooter>
       </ModalContent>
     </Modal>
   )
