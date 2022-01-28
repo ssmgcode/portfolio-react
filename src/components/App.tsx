@@ -3,7 +3,10 @@ import { ChakraProvider, Grid, GridItem, useMediaQuery } from '@chakra-ui/react'
 import HeaderBar from './sections/HeaderBar'
 import theme from '../theme'
 import NavBar from './sections/NavBar'
-import appRoutes from '../config/routes'
+import Home from './pages/Home'
+import Projects from './pages/Projects'
+import ProjectModal from './sections/projects/ProjectModal'
+import Contact from './pages/Contact'
 
 export const App = () => {
   const [isLargeDisplayDevice] = useMediaQuery('(min-width: 768px)')
@@ -28,9 +31,11 @@ export const App = () => {
           </GridItem>
           <GridItem as="main" gridArea="main" overflow="auto">
             <Routes>
-              {appRoutes.map(({ path, element }) => (
-                <Route key={path} path={path} element={element} />
-              ))}
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects />}>
+                <Route path=":project" element={<ProjectModal />} />
+              </Route>
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </GridItem>
           {!isLargeDisplayDevice && (

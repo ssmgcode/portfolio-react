@@ -43,9 +43,10 @@
   ],
   "projects": [
     {
+      "id": "antojitos-del-parque",
       "name": "Antojitos del Parque",
+      "description": "A special place to enjoy sweet desserts 🍦.",
       "type": "landing page",
-      "technologies": ["svelte", "typescript"],
       "image": "/images/antojitosdelparque.png",
       "link": "https://antojitosdelparque.com",
       "githubLink": "https://github.com/ssmgcode/antojitos-del-parque-landing-page"
